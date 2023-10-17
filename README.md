@@ -1,3 +1,44 @@
+\documentclass[11pt]{article}
+
+\usepackage[top=0.3in, bottom=0.3in, left=0.5in, right=0.5in]{geometry}
+\usepackage{authblk}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{biblatex}
+
+\bibliography{references.bib}
+
+\newcommand{\email}[1]{\texttt{\href{mailto:#1}{#1}}}
+
+\title{APMA 4990 - 3 Project Proposal: Developments in Kalman Filtering with Applications in Finance}
+
+\author{Wencheng Bao\footnote{Graduate student, Department of Applied Math and Applied Physics, Columbia University \email{wb2395@columbia.edu}{}} 
+Kaiwen Zhang\footnote{Undergraduate student, Department of Applied Math and Applied Physics, Columbia University 
+\email{kz2387@columbia.edu}{}} 
+David Feng\footnote{Graduate student, Department of Applied Math and Applied Physics, Columbia University
+\email{sf3164@columbia.edu}{}}}
+
+\makeatletter
+\let\inserttitle\@title
+\let\insertauthor\@author
+\makeatother
+
+\begin{document}
+
+\begin{center}
+  \LARGE{\inserttitle}
+
+  \Large{\insertauthor}
+\end{center}
+
 \section{Research Problem}
 \\
 \\
@@ -37,3 +78,5 @@ $$
 & \mathrm{h}(\mathrm{t})=\omega+\sum_{\mathrm{i}=1}^{\mathrm{p}} \beta_{\mathrm{i}} \mathrm{h}(\mathrm{t}-\mathrm{i} \Delta)+\sum_{\mathrm{i}=1}^{\mathrm{q}} \alpha_{\mathrm{i}}\left(\mathrm{z}(\mathrm{t}-\mathrm{i} \Delta)-\gamma_{\mathrm{i}} \sqrt{\mathrm{h}(\mathrm{t}-\mathrm{i} \Delta)}\right)^2,
 \end{aligned}
 $$
+
+\end{document}
