@@ -21,13 +21,13 @@ Alternatively, we might try to simulate with an Unscented Kalman Filter(UKF). Th
 ### Basic Model for Finance
 
 The Heston model is a popular mathematical model used to describe the evolution of volatility in financial markets. Heston model assumes that $S_t$, the price of the asset, is determined by a stochastic process
-$
-d S_t=\mu S_t d t+\sqrt{\nu_t} S_t d W_t^S
-$
+
+$d S_t=\mu S_t d t+\sqrt{\nu_t} S_t d W_t^S$
+
 where $\nu_t$, the instantaneous variance, is given by a Feller square-root or CIR process,
-$
-d \nu_t=\kappa\left(\theta-\nu_t\right) d t+\xi \sqrt{\nu_t} d W_t^\nu
-$
+
+$d \nu_t=\kappa\left(\theta-\nu_t\right) d t+\xi \sqrt{\nu_t} d W_t^\nu$
+
 and $W_t^S, W_t^\nu$ are Wiener processes with correlation $\rho$.
 The model has five parameters:
 - $\nu_0$, the initial variance.
@@ -37,10 +37,8 @@ The model has five parameters:
 - $\xi$, the volatility of the volatility, or 'vol of vol', which determines the variance of $\mathrm{v}_t$.\\
 If the parameters obey the following condition (known as the Feller condition) then the process $\nu_t$ is strictly positive $2 \kappa \theta>\xi^2 \text {. }$
 If time allows,  We are trying to combine the Heston-Nandi with relative Kalman Filtering under GARCH(1,1):
-$
-\begin{aligned}
-& \log (\mathrm{S}(\mathrm{t}))=\log (\mathrm{S}(\mathrm{t}-\Delta))+\mathrm{r}+\lambda \mathrm{h}(\mathrm{t})+\sqrt{\mathrm{h}(\mathrm{t})} \mathrm{z}(\mathrm{t}) 
-& \mathrm{h}(\mathrm{t})=\omega+\sum_{\mathrm{i}=1}^{\mathrm{p}} \beta_{\mathrm{i}} \mathrm{h}(\mathrm{t}-\mathrm{i} \Delta)+\sum_{\mathrm{i}=1}^{\mathrm{q}} \alpha_{\mathrm{i}}\left(\mathrm{z}(\mathrm{t}-\mathrm{i} \Delta)-\gamma_{\mathrm{i}} \sqrt{\mathrm{h}(\mathrm{t}-\mathrm{i} \Delta)}\right)^2,
-\end{aligned}
-$
+
+$& \log (\mathrm{S}(\mathrm{t}))=\log (\mathrm{S}(\mathrm{t}-\Delta))+\mathrm{r}+\lambda \mathrm{h}(\mathrm{t})+\sqrt{\mathrm{h}(\mathrm{t})} \mathrm{z}(\mathrm{t})$
+
+$& \mathrm{h}(\mathrm{t})=\omega+\sum_{\mathrm{i}=1}^{\mathrm{p}} \beta_{\mathrm{i}} \mathrm{h}(\mathrm{t}-\mathrm{i} \Delta)+\sum_{\mathrm{i}=1}^{\mathrm{q}} \alpha_{\mathrm{i}}\left(\mathrm{z}(\mathrm{t}-\mathrm{i} \Delta)-\gamma_{\mathrm{i}} \sqrt{\mathrm{h}(\mathrm{t}-\mathrm{i} \Delta)}\right)^2$
 
