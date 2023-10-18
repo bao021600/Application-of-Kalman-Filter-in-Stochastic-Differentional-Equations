@@ -34,11 +34,13 @@ The model has five parameters:
 - $\theta$, the long variance, or long-run average variance of the price; as $t$ tends to infinity, the expected value of $v_t$ tends to $\theta$.
 - $\rho$, the correlation of the two Wiener processes.
 - $\kappa$, the rate at which $v_t$ reverts to $\theta$.
-- $\xi$, the volatility of the volatility, or 'vol of vol', which determines the variance of $\mathrm{v}_t$.\\
+- $\xi$, the volatility of the volatility, or 'vol of vol', which determines the variance of $\mathrm{v}_t$.
+  
 If the parameters obey the following condition (known as the Feller condition) then the process $\nu_t$ is strictly positive $2 \kappa \theta>\xi^2 \text {. }$
+
 If time allows,  We are trying to combine the Heston-Nandi with relative Kalman Filtering under GARCH(1,1):
 
-$& \log (\mathrm{S}(\mathrm{t}))=\log (\mathrm{S}(\mathrm{t}-\Delta))+\mathrm{r}+\lambda \mathrm{h}(\mathrm{t})+\sqrt{\mathrm{h}(\mathrm{t})} \mathrm{z}(\mathrm{t})$
+$ \log (\mathrm{S}(\mathrm{t}))=\log (\mathrm{S}(\mathrm{t}-\Delta))+\mathrm{r}+\lambda \mathrm{h}(\mathrm{t})+\sqrt{\mathrm{h}(\mathrm{t})} \mathrm{z}(\mathrm{t})$
 
-$& \mathrm{h}(\mathrm{t})=\omega+\sum_{\mathrm{i}=1}^{\mathrm{p}} \beta_{\mathrm{i}} \mathrm{h}(\mathrm{t}-\mathrm{i} \Delta)+\sum_{\mathrm{i}=1}^{\mathrm{q}} \alpha_{\mathrm{i}}\left(\mathrm{z}(\mathrm{t}-\mathrm{i} \Delta)-\gamma_{\mathrm{i}} \sqrt{\mathrm{h}(\mathrm{t}-\mathrm{i} \Delta)}\right)^2$
+$ \mathrm{h}(\mathrm{t})=\omega+\sum_{\mathrm{i}=1}^{\mathrm{p}} \beta_{\mathrm{i}} \mathrm{h}(\mathrm{t}-\mathrm{i} \Delta)+\sum_{\mathrm{i}=1}^{\mathrm{q}} \alpha_{\mathrm{i}}\left(\mathrm{z}(\mathrm{t}-\mathrm{i} \Delta)-\gamma_{\mathrm{i}} \sqrt{\mathrm{h}(\mathrm{t}-\mathrm{i} \Delta)}\right)^2$
 
